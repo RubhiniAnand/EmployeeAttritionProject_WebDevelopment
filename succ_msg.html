@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Employee Attrition Prediction </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Age:{{data_a}}</p>
+      <p>DailyRate:{{data_d}}</p>
+      <p>MonthlyIncome:{{data_m}}</p>
+      <p>MonthlyRate:{{data_mr}}</p>
+      <p>TotalWorkingYears:{{data_wy}}</p>
+      <p>YearsAtCompany:{{data_y}}</p>
+      <p>YearsInCurrentRole:{{data_yc}}</p>
+      <p>YearsWithCurrManager:{{data_cm}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>The Employee <b>will leave the company</b></p>
+      {% else %}
+      <p>The Employee <b>will not leave the company</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'ckdApp:ckd' %}">CKD Predicition</a>
+    <br>
+</div>
+{% endblock %}
